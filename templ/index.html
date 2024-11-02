@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentiment Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Sentiment Analysis</h1>
+        <form id="upload-form" enctype="multipart/form-data">
+            <label for="file-input">Upload files:</label>
+            <input type="file" id="file-input" name="files" multiple> <!-- Added 'multiple' here -->
+            <input type="submit" value="Analyze">
+        </form>
+        <div id="or-divider">OR</div>
+        <div id="text-analysis">
+            <label for="text-input">Enter text for analysis:</label>
+            <textarea id="text-input" rows="4" cols="50"></textarea>
+            <button id="analyze-text">Analyze Text</button>
+        </div>
+        <div id="pie-chart-container" style="display: none;">
+            <img id="pie-chart" alt="Sentiment Pie Chart">
+        </div>
+        <div id="sentiment-counts" style="display: none;">
+            <p id="positive-count"></p>
+            <p id="neutral-count"></p>
+            <p id="negative-count"></p>
+        </div>
+    </div>
+    <script src="{{ url_for('static', filename='main.js') }}"></script>
+</body>
+</html>
